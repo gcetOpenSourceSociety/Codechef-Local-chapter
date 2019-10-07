@@ -8,6 +8,10 @@ Website for GCET CodeChef Campus Chapter built with <3 during Hacktoberfest 2019
 ### Your first Contribution
 To get started : [How to create a pull request](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github)
 
+### Technologies and Tools
+* [Bootstrap](https://getbootstrap.com/ "Bootstrap's Homepage")
+* [Mobirise](https://mobirise.com/ "Mobirise Website Builder")
+* [Tether](http://tether.io/ "Tether's Homepage")
 
 ### Live deployment
 After every commit or PR, `Now for Github` will deploy the website so that anyone can easily open it.
