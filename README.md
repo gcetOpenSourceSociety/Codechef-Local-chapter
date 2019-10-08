@@ -38,7 +38,7 @@ https://www.codecademy.com/
 ->HTMLDog is a website covering the three primary languages of web development, HTML, CSS, and Javascript.
 https://www.htmldog.com
 
-*******youtube channels******
+##  Youtube channels
 ->Traversy media is a youtube channel created by Brad Traversy. His youtube channel covers nearly every topic regarding web development, from HTML, CSS, and Javascript to all the different frameworks and libraries (Sass, Bootstrap, Angular, React, Vue Js).
 https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA
 
