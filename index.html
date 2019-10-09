@@ -20,13 +20,30 @@
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="assets/dropdown/css/index.css" type="text/css">
 </head>
 
 <body>
   <!--    HEADER section    -->
   <section class="menu cid-rhHOOyR0mo" once="menu" id="menu1-h">
     <!--    NAVIGATION    -->
-    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+     <nav>
+            <div class="menu-button" >
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                </div>
+         <div class="logo">Codechef</div>
+         <ul id="dropdown" class="nav-links">
+               
+            <li class="lk"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">List</a></li>
+        </ul>
+        
+    </nav>
       <!--    HAMBURGER MENU BUTTON    -->
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <div class="hamburger">
@@ -105,5 +122,16 @@
     </span>
   </div>
 </body>
-
+ <!--    script for navBar starts    -->
+  <script  >
+        let md=document.querySelector(".menu-button");
+         
+          let navbar=document.querySelector("nav")
+           let bd=document.querySelector("body");
+            md.addEventListener("click", function(){
+                console.log("clicked");
+                document.getElementById("dropdown").classList.toggle("new");
+            });
+    </script>
+    <!--    script for navBar ends   -->
 </html>
