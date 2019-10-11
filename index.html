@@ -25,57 +25,23 @@
 
 <body>
   <!--    HEADER section    -->
-  <section class="menu cid-rhHOOyR0mo" once="menu" id="menu1-h">
-    <!--    NAVIGATION    -->
-     <nav>
-            <div class="menu-button" >
-                    <div class="menu-line"></div>
-                    <div class="menu-line"></div>
-                    <div class="menu-line"></div>
-                </div>
-         <div class="logo">Codechef</div>
-         <ul id="dropdown" class="nav-links">
-               
-            <li class="lk"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">List</a></li>
-        </ul>
-        
-    </nav>
-      <!--    HAMBURGER MENU BUTTON    -->
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <div class="hamburger">
-          <!--    MENU ITEMS    -->
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
-
-      <!--    LOGO & PAGE TITLE   -->
-      <div class="menu-logo">
-        <div class="navbar-brand">
-
-          <!--    LOGO    -->
-          <span class="navbar-logo">
-            <a href="">
-              <img src="assets/images/codechef.png" alt="SkillUpGCET" title="" style="height: 3.8rem;">
-            </a>
-          </span>
-
-          <!--    PAGE TITLE    -->
-          <span class="navbar-caption-wrap">
-            <a class="navbar-caption text-white display-4" href="">Codechef Campus Chapter of GCET</a>
-          </span>
-        </div>
-      </div>
-
-    </nav>
-  </section>
-
+  <div class="topnav" id="myTopnav">
+	<img class="logo" src="assets/images/codechef2.png" alt="SkillUpGCET">
+  <a href="#" >.</a>
+  <a href="#" >List</a>
+  <a href="#" >Contact</a>
+  <a href="#">Blogs</a>
+  <a href="#">About</a>
+  <a href="#" class="active">Home</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+  
+  <!-- -->
+<br>
+  <br />
+  <br />
   <br />
   <br />
   <br />
@@ -123,15 +89,15 @@
   </div>
 </body>
  <!--    script for navBar starts    -->
-  <script  >
-        let md=document.querySelector(".menu-button");
-         
-          let navbar=document.querySelector("nav")
-           let bd=document.querySelector("body");
-            md.addEventListener("click", function(){
-                console.log("clicked");
-                document.getElementById("dropdown").classList.toggle("new");
-            });
-    </script>
+  <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
     <!--    script for navBar ends   -->
 </html>
