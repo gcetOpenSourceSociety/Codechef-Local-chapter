@@ -56,12 +56,14 @@ b, strong {
   text-align:center;
   padding: 2%;
   min-height: 30px;
+  margin: 2.2%;
 }
 
 .newLine {
   text-align: center;
   position: relative;
   margin: 50px auto;
+
 }
 #close {
   font-family: arial;
