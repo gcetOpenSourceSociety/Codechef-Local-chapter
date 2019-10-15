@@ -54,7 +54,7 @@ b, strong {
 /* Add some padding inside the card container */
 .container {
   text-align:center;
-  padding: 2px;
+  padding: 2%;
   min-height: 30px;
 }
 
@@ -575,8 +575,9 @@ nav .mbr-section-btn {
 .footer {
    position: fixed;
    left: 0;
-   bottom: 15px;
+   bottom: 1.45%;
    width: 100%;
+   margin: 0;
 }
 
 .statistic-section {
