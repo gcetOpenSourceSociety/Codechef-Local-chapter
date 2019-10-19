@@ -46,44 +46,85 @@
 
   <!-- -->
 <br>
-<br/>
-<br/>
+<br>
 <div class="row" id="uc1">
-  <div class="col-sm-4"><h3><b><mark>Upcoming Contest</b></mark></h3></div>
+  <div class="col-sm-4"><h3><u><b>Upcoming Contest</b></u></h3></div>
 </div>
-<br/>
 <div class="row" id="uc2">
-  <div class="col-sm-4"><h4>October Mega Cook-off 2019</h4></div>
+  <div class="col-sm-4"><u><a href="https://www.codechef.com/COOK111?utm_source=website&utm_medium=upcoming_contest&utm_campaign=COOK111" style="font-size:1.5em;">October Mega Cook-off 2019</a></u></div>
 </div>
 <div class="row" id="uc3">
   <div class="col-sm-4" >
-    <p id="demo"></p>
-    <script>
-      var countDownDate = new Date("Oct 20, 2019 21:30:00").getTime();
-
-      var x = setInterval(function() {
-
-      var now = new Date().getTime();
-      var distance = countDownDate - now;
-
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("demo").innerHTML = days + " : " + hours + " : "+ minutes + " : " + seconds;
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-      }
-      }, 1000);
-    </script>
+    <span id="demo"></span>
   </div>
 </div>
 <div class="row" id="uc4">
-  <div class="col-sm-4"></h4></div>
+  <div class="col-sm-4">
+    <div id="clockdiv">
+  <div>
+    <span class="days"></span>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+  </div>
 </div>
 
+<script>
+  //var countDownDate = new Date("Oct 20, 2019 21:30:00").getTime();
+  function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      'total': t,
+      'days': days,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
+  }
+
+  function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var daysSpan = clock.querySelector('.days');
+    var hoursSpan = clock.querySelector('.hours');
+    var minutesSpan = clock.querySelector('.minutes');
+    var secondsSpan = clock.querySelector('.seconds');
+
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+
+      daysSpan.innerHTML = t.days;
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+  }
+
+  var deadline = new Date(Date.parse(new Date()) + (new Date("October 20, 2019 21:30:00").getTime()-new Date().getTime()));
+  initializeClock('clockdiv', deadline);
+</script>
 
   <!--    DIVIDER    -->
   <div class="newLine">
@@ -153,7 +194,7 @@
 
       <!--    contributor    -->
       <div class="col-md-2 d-flex align-items-stretch">
-        <div class="col-md-12 card">
+        <div class="col-md-24 card">
           <div class="container">
             <h4><b>Dhruvit Jakasaniya</b></h4>
             <p>IT</p>
@@ -163,7 +204,7 @@
 
       <!--    contributor    -->
       <div class="col-md-2 d-flex align-items-stretch">
-        <div class="col-md-12 card">
+        <div class="col-md-24 card">
           <div class="container">
             <h4><b>Akshit Desai</b></h4>
             <p>IT</p>

@@ -56,7 +56,6 @@ b, strong {
   text-align:center;
   padding: 2%;
   min-height: 30px;
-  margin: 2.2%;
 }
 
 .newLine {
@@ -544,10 +543,9 @@ nav .mbr-section-btn {
   display: block;
   position: absolute;
   width: 100%;
+  margin:0;
   left: 50%;
   top: 45%;
-  bottom: auto;
-  right: auto;
   transform: translateX(-50%) translateY(-50%);
   text-align: center;
 }
@@ -577,8 +575,8 @@ nav .mbr-section-btn {
 .footer {
    position: fixed;
    left: 0;
+   right:0;
    bottom: 1.45%;
-   width: 100%;
    margin: 0;
 }
 
@@ -629,6 +627,34 @@ nav .mbr-section-btn {
 	.counter {
 		margin-bottom: 40px;
 	}
+}
+
+#clockdiv{
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+#clockdiv > div{
+  padding: 10px;
+  border-radius: 3px;
+  background: #995f46;
+  display: inline-block;
+}
+
+#clockdiv div > span{
+  padding: 15px;
+  border-radius: 3px;
+  background: #5A3E32;
+  display: inline-block;
+}
+
+.smalltext{
+  padding-top: 5px;
+  font-size: 16px;
 }
 
 .contribs{
