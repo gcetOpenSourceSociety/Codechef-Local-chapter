@@ -8,6 +8,26 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+.row {
+  text-align: center;
+}
+}
+#uc1 {
+  color: black;
+  text-align: center;
+}
+#uc2 {
+  color: brown;
+  text-align: center;
+}
+#uc3 {
+  color: brown;
+  text-align: center;
+}
+#uc4 {
+  color: brown;
+  text-align: center;
+}
 
 .topnav {
   overflow: hidden;
