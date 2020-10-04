@@ -635,12 +635,12 @@ nav .mbr-section-btn {
   display: inline-block;
   font-weight: 100;
   text-align: center;
-  font-size: 30px;
+  width: inherit;
 }
 
 #clockdiv > div{
-  padding: 10px;
-  border-radius: 3px;
+  padding: 3%;
+  border-radius: 2%;
   background: #995f46;
   display: inline-block;
 }
