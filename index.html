@@ -51,7 +51,7 @@
   <div class="col-sm-4"><h3><u><b>Upcoming Contest</b></u></h3></div>
 </div>
 <div class="row" id="uc2">
-  <div class="col-sm-4"><u><a href="https://www.codechef.com/LTIME77?utm_source=website&utm_medium=upcoming_contest&utm_campaign=LTIME77" style="font-size:1.5em;">October Lunchtime 2019</a></u></div>
+  <div class="col-sm-4"><u><a id="upcomCont" href="" style="font-size:1.5em;"></a></u></div>
 </div>
 <div class="row" id="uc3">
   <div class="col-sm-4" >
@@ -81,50 +81,8 @@
   </div>
 </div>
 
-<script>
-  //var countDownDate = new Date("Oct 20, 2019 21:30:00").getTime();
-  function getTimeRemaining(endtime) {
-    var t = Date.parse(endtime) - Date.parse(new Date());
-    var seconds = Math.floor((t / 1000) % 60);
-    var minutes = Math.floor((t / 1000 / 60) % 60);
-    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-    var days = Math.floor(t / (1000 * 60 * 60 * 24));
-    return {
-      'total': t,
-      'days': days,
-      'hours': hours,
-      'minutes': minutes,
-      'seconds': seconds
-    };
-  }
 
-  function initializeClock(id, endtime) {
-    var clock = document.getElementById(id);
-    var daysSpan = clock.querySelector('.days');
-    var hoursSpan = clock.querySelector('.hours');
-    var minutesSpan = clock.querySelector('.minutes');
-    var secondsSpan = clock.querySelector('.seconds');
 
-    function updateClock() {
-      var t = getTimeRemaining(endtime);
-
-      daysSpan.innerHTML = t.days;
-      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-      if (t.total <= 0) {
-        clearInterval(timeinterval);
-      }
-    }
-
-    updateClock();
-    var timeinterval = setInterval(updateClock, 1000);
-  }
-
-  var deadline = new Date(Date.parse(new Date()) + (new Date("October 26, 2019 19:30:00").getTime()-new Date().getTime()));
-  initializeClock('clockdiv', deadline);
-</script>
 
   <!--    DIVIDER    -->
   <div class="newLine">
@@ -231,6 +189,75 @@
     </span>
   </div>
 </body>
+<script>
+var myUrl = 'https://clist.by/get/events/';
+
+var proxy = 'https://cors-anywhere.herokuapp.com/';
+
+var finalURL = proxy + myUrl;
+var upcomingContest = [];
+var today = new Date();
+var countdown = Number.MAX_SAFE_INTEGER;
+var upcoming;
+$.getJSON(finalURL, function(data) {
+  for(var i = 0; i < data.length; i++) {
+    var obj = data[i];
+    var d = new Date(obj.start);
+    if(obj.host=="codechef.com"){
+      if(obj.countdown < countdown && today.getTime() < d.getTime()){
+        upcomingContest.push(obj);
+        countdown = obj.countdown;
+      }
+    }
+}
+upcoming = upcomingContest.slice(-1)[0];
+document.getElementById("upcomCont").href=upcoming.url;
+document.getElementById("upcomCont").innerHTML = upcoming.title;
+var deadline = new Date(Date.parse(new Date()) + (new Date(upcoming.start).getTime()-new Date().getTime()));
+console.log(deadline);
+initializeClock('clockdiv', deadline);
+});
+
+//var countDownDate = new Date("Oct 20, 2019 21:30:00").getTime();
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+</script>
  <!--    script for navBar starts    -->
   <script>
 function myFunction()
