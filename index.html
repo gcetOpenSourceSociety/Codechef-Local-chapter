@@ -49,18 +49,43 @@
 <br>
 <div class="row" id="uc1">
   <div class="col-sm-4"><h3><u><b>Upcoming Contest</b></u></h3></div>
+  <div class="col-sm-4"><h3><u><b>Ongoing Contest</b></u></h3></div>
 </div>
 <div class="row" id="uc2">
   <div class="col-sm-4"><u><a id="upcomCont" href="" style="font-size:1.5em;"></a></u></div>
+  <div class="col-sm-4"><u><a id="ongoCont" href="" style="font-size:1.5em;"></a></u></div>
 </div>
 <div class="row" id="uc3">
+  <div class="col-sm-4" >
+    <span id="demo"></span>
+  </div>
   <div class="col-sm-4" >
     <span id="demo"></span>
   </div>
 </div>
 <div class="row" id="uc4">
   <div class="col-sm-4">
-    <div id="clockdiv">
+    <div id="clockdiv1">
+  <div>
+    <span class="days"></span>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+  </div>
+  <div class="col-sm-4">
+    <div id="clockdiv2">
   <div>
     <span class="days"></span>
     <div class="smalltext">Days</div>
@@ -196,26 +221,38 @@ var proxy = 'https://cors-anywhere.herokuapp.com/';
 
 var finalURL = proxy + myUrl;
 var upcomingContest = [];
+var ongoingContest = [];
 var today = new Date();
-var countdown = Number.MAX_SAFE_INTEGER;
+var countdown_up = Number.MAX_SAFE_INTEGER;
+var countdown_on = Number.MAX_SAFE_INTEGER;
 var upcoming;
+var ongoing;
 $.getJSON(finalURL, function(data) {
   for(var i = 0; i < data.length; i++) {
     var obj = data[i];
     var d = new Date(obj.start);
+    var d_end = new Date(obj.end);
     if(obj.host=="codechef.com"){
-      if(obj.countdown < countdown && today.getTime() < d.getTime()){
+      if(obj.countdown < countdown_up && today.getTime() < d.getTime()){
         upcomingContest.push(obj);
-        countdown = obj.countdown;
+        countdown_up = obj.countdown;
+      }
+      if(obj.countdown < countdown_on && today.getTime() > d.getTime() && today.getTime() < d_end.getTime()){
+        ongoingContest.push(obj);
+        countdown_on = obj.countdown;
       }
     }
 }
 upcoming = upcomingContest.slice(-1)[0];
+ongoing = ongoingContest.slice(-1)[0];
 document.getElementById("upcomCont").href=upcoming.url;
 document.getElementById("upcomCont").innerHTML = upcoming.title;
-var deadline = new Date(Date.parse(new Date()) + (new Date(upcoming.start).getTime()-new Date().getTime()));
-console.log(deadline);
-initializeClock('clockdiv', deadline);
+var deadline1 = new Date(Date.parse(new Date()) + (new Date(upcoming.start).getTime()-new Date().getTime()));
+initializeClock('clockdiv1', deadline1);
+document.getElementById("ongoCont").href=ongoing.url;
+document.getElementById("ongoCont").innerHTML = ongoing.title;
+var deadline2 = new Date(Date.parse(new Date()) + (new Date(ongoing.end).getTime()-new Date().getTime()));
+initializeClock('clockdiv2', deadline2);
 });
 
 //var countDownDate = new Date("Oct 20, 2019 21:30:00").getTime();

@@ -629,7 +629,7 @@ nav .mbr-section-btn {
 	}
 }
 
-#clockdiv{
+#clockdiv1,#clockdiv2{
   font-family: sans-serif;
   color: #fff;
   display: inline-block;
@@ -638,14 +638,14 @@ nav .mbr-section-btn {
   width: inherit;
 }
 
-#clockdiv > div{
+#clockdiv1  > div,#clockdiv2 > div{
   padding: 3%;
   border-radius: 2%;
   background: #995f46;
   display: inline-block;
 }
 
-#clockdiv div > span{
+#clockdiv1 div > span,#clockdiv2 div > span{
   padding: 15px;
   border-radius: 3px;
   background: #5A3E32;
@@ -657,6 +657,6 @@ nav .mbr-section-btn {
   font-size: 16px;
 }
 
-.contribs{
-
+body{
+  overflow-x: hidden;
 }
