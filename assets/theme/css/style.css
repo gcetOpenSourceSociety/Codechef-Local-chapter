@@ -660,3 +660,7 @@ nav .mbr-section-btn {
 body{
   overflow-x: hidden;
 }
+
+.names{
+  text-align: justify;
+}

@@ -32,283 +32,415 @@
 <body>
   <!--    HEADER section    -->
   <div class="topnav" id="myTopnav">
-	<img class="logo" src="assets/images/codechef2.png" alt="SkillUpGCET">
-  <a href="#" >Team</a>
-  <a href="#" >Contact</a>
-  <a href="#">About</a>
-  <a href="#" >Events</a>
-  <a href="#">Blogs</a>
-  <a href="#" class="active">Home</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+    <img class="logo" src="assets/images/codechef2.png" alt="SkillUpGCET">
+    <a href="#">Team</a>
+    <a href="#">Contact</a>
+    <a href="#">About</a>
+    <a href="#">Events</a>
+    <a href="#">Blogs</a>
+    <a href="#" class="active">Home</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 
   <!-- -->
-<br>
-<br>
-<div class="row" id="uc1">
-  <div class="col-sm-4"><h3><u><b>Upcoming Contest</b></u></h3></div>
-  <div class="col-sm-4"><h3><u><b>Ongoing Contest</b></u></h3></div>
-</div>
-<div class="row" id="uc2">
-  <div class="col-sm-4"><u><a id="upcomCont" href="" style="font-size:1.5em;"></a></u></div>
-  <div class="col-sm-4"><u><a id="ongoCont" href="" style="font-size:1.5em;"></a></u></div>
-</div>
-<div class="row" id="uc3">
-  <div class="col-sm-4" >
-    <span id="demo"></span>
+  <br>
+  <br>
+  <div class="row" id="uc1">
+    <div class="col-sm-4">
+      <h3><u><b>Upcoming Contest</b></u></h3>
+    </div>
+    <div class="col-sm-4">
+      <h3><u><b>Ongoing Contest</b></u></h3>
+    </div>
+    <div class="col-sm-4">
+      <h3><u><b>Leaderboard</b></u></h3>
+    </div>
   </div>
-  <div class="col-sm-4" >
-    <span id="demo"></span>
+  <div class="row" id="uc2">
+    <div class="col-sm-4"><u><a id="upcomCont" href="" style="font-size:1.5em;"></a></u></div>
+    <div class="col-sm-4"><u><a id="ongoCont" href="" style="font-size:1.5em;"></a></u></div>
+    <div class="col-sm-4"><u><a id="lastCont" href="" style="font-size:1.5em;"></a></u></div>
   </div>
-</div>
-<div class="row" id="uc4">
-  <div class="col-sm-4">
-    <div id="clockdiv1">
-  <div>
-    <span class="days"></span>
-    <div class="smalltext">Days</div>
+  <div class="row" id="uc3">
+    <div class="col-sm-4">
+      <span id="demo"></span>
+    </div>
+    <div class="col-sm-4">
+      <span id="demo"></span>
+    </div>
   </div>
-  <div>
-    <span class="hours"></span>
-    <div class="smalltext">Hours</div>
-  </div>
-  <div>
-    <span class="minutes"></span>
-    <div class="smalltext">Minutes</div>
-  </div>
-  <div>
-    <span class="seconds"></span>
-    <div class="smalltext">Seconds</div>
-  </div>
-</div>
-  </div>
-  <div class="col-sm-4">
-    <div id="clockdiv2">
-  <div>
-    <span class="days"></span>
-    <div class="smalltext">Days</div>
-  </div>
-  <div>
-    <span class="hours"></span>
-    <div class="smalltext">Hours</div>
-  </div>
-  <div>
-    <span class="minutes"></span>
-    <div class="smalltext">Minutes</div>
-  </div>
-  <div>
-    <span class="seconds"></span>
-    <div class="smalltext">Seconds</div>
-  </div>
-</div>
-  </div>
-</div>
-
-
-
-
-  <!--    DIVIDER    -->
-  <div class="newLine">
-    <span id="nl" class="top right"></span>
-    <span id="nl" class="top left"></span>
-    <h2 id="close">&lt; / &gt;</h2>
-    <span id="nl" class="bottom right"></span>
-    <span id="nl" class="bottom left"></span>
-  </div>
-
-  <section id="statistic" class="statistic-section one-page-section">
-          <div class="container">
-              <div class="row text-center">
-                  <div class="col-xs-12 col-md-3">
-                    <div class="counter">
-                        <i class="fa fa-clock-o fa-2x stats-icon"></i>
-                        <h2 class="timer count-title count-number">3</h2>
-                        <div class="stats-line-black"></div>
-                        <p class="stats-text">Years</p>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-md-3">
-                      <div class="counter">
-                          <i class="fa fa-code fa-2x stats-icon"></i>
-                          <h2 class="timer count-title count-number">10</h2>
-                          <div class="stats-line-black"></div>
-                          <p class="stats-text">Programming competitions</p>
-                      </div>
-                  </div>
-                  <div class="col-xs-12 col-md-3">
-                      <div class="counter">
-                          <i class="fa fa-graduation-cap fa-2x stats-icon"></i>
-                          <h2></h2><h2></h2>
-                          <h2 class="timer count-title count-number" style="display:inline">250</h2>
-                          <h2 class="count-title" style="display:inline">+</h2>
-                          <div class="stats-line-black"></div>
-                          <p class="stats-text">Students</p>
-                      </div>
-                  </div>
-                  <div class="col-xs-12 col-md-3">
-                      <div class="counter">
-                          <i class="fa fa-laptop fa-2x stats-icon"></i>
-                          <h2 class="timer count-title count-number">1
-                          </h2>
-                          <div class="stats-line-black"></div>
-                          <p class="stats-text">Teams took part in ACM ICPC</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-
-  <!--    DIVIDER    -->
-  <div class="newLine">
-    <span id="nl" class="top right"></span>
-    <span id="nl" class="top left"></span>
-    <h2 id="close">&lt; / &gt;</h2>
-    <span id="nl" class="bottom right"></span>
-    <span id="nl" class="bottom left"></span>
-  </div>
-
-  <!--    LIST OF CONTRIBUTORS    -->
-  <h2 style="text-align:center"> List of Contributors </h2>
-  <hr />
-  <div class="wrapper container contribs">
-    <div class="row">
-
-      <!--    contributor    -->
-      <div class="col-md-2 d-flex align-items-stretch">
-        <div class="col-md-24 card">
-          <div class="container">
-            <h4><b>Dhruvit Jakasaniya</b></h4>
-            <p>IT</p>
-          </div>
+  <div class="row" id="uc4">
+    <div class="col-sm-4">
+      <div id="clockdiv1">
+        <div>
+          <span class="days"></span>
+          <div class="smalltext">Days</div>
+        </div>
+        <div>
+          <span class="hours"></span>
+          <div class="smalltext">Hours</div>
+        </div>
+        <div>
+          <span class="minutes"></span>
+          <div class="smalltext">Minutes</div>
+        </div>
+        <div>
+          <span class="seconds"></span>
+          <div class="smalltext">Seconds</div>
         </div>
       </div>
+    </div>
 
-      <!--    contributor    -->
-      <div class="col-md-2 d-flex align-items-stretch">
-        <div class="col-md-24 card">
-          <div class="container">
-            <h4><b>Akshit Desai</b></h4>
-            <p>IT</p>
-          </div>
+    <div class="col-sm-4">
+      <div id="clockdiv2">
+        <div>
+          <span class="days"></span>
+          <div class="smalltext">Days</div>
+        </div>
+        <div>
+          <span class="hours"></span>
+          <div class="smalltext">Hours</div>
+        </div>
+        <div>
+          <span class="minutes"></span>
+          <div class="smalltext">Minutes</div>
+        </div>
+        <div>
+          <span class="seconds"></span>
+          <div class="smalltext">Seconds</div>
         </div>
       </div>
+    </div>
 
-      <!--    contributor    -->
-      <div class="col-md-2 d-flex align-items-stretch">
-        <div class="col-md-24 card">
-          <div class="container">
-            <h4><b>Zalak Delvadiya</b></h4>
-            <p>IT</p>
-          </div>
+    <div class="col-sm-2">
+      <div class="leaderboard_div1">
+        <div style="text-align: justify;">
+          <h4>Div 1</h4>
+        </div>
+        <div class="names">
+          <span class="name1"></span>
+        </div>
+        <div class="names">
+          <span class="name2"></span>
+        </div>
+        <div class="names">
+          <span class="name3"></span>
         </div>
       </div>
-
+    </div>
+    <div class="col-sm-2">
+      <div class="leaderboard_div2">
+        <div style="text-align: justify;">
+          <h4>Div 2</h4>
+        </div>
+        <div class="names">
+          <span class="name4"></span>
+        </div>
+        <div class="names">
+          <span class="name5"></span>
+        </div>
+        <div class="names">
+          <span class="name6"></span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="footer">
-    <span id="foot">
-      Made &nbsp;with &nbsp;<i class="fa fa-heart pulse"></i> &nbsp;by &nbsp;<b>GCETians</b>
-    </span>
-  </div>
+      <!--    DIVIDER    -->
+      <div class="newLine">
+        <span id="nl" class="top right"></span>
+        <span id="nl" class="top left"></span>
+        <h2 id="close">&lt; / &gt;</h2>
+        <span id="nl" class="bottom right"></span>
+        <span id="nl" class="bottom left"></span>
+      </div>
+
+      <section id="statistic" class="statistic-section one-page-section">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-xs-12 col-md-3">
+              <div class="counter">
+                <i class="fa fa-clock-o fa-2x stats-icon"></i>
+                <h2 class="timer count-title count-number">3</h2>
+                <div class="stats-line-black"></div>
+                <p class="stats-text">Years</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+              <div class="counter">
+                <i class="fa fa-code fa-2x stats-icon"></i>
+                <h2 class="timer count-title count-number">10</h2>
+                <div class="stats-line-black"></div>
+                <p class="stats-text">Programming competitions</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+              <div class="counter">
+                <i class="fa fa-graduation-cap fa-2x stats-icon"></i>
+                <h2></h2>
+                <h2></h2>
+                <h2 class="timer count-title count-number" style="display:inline">250</h2>
+                <h2 class="count-title" style="display:inline">+</h2>
+                <div class="stats-line-black"></div>
+                <p class="stats-text">Students</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+              <div class="counter">
+                <i class="fa fa-laptop fa-2x stats-icon"></i>
+                <h2 class="timer count-title count-number">1
+                </h2>
+                <div class="stats-line-black"></div>
+                <p class="stats-text">Teams took part in ACM ICPC</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--    DIVIDER    -->
+      <div class="newLine">
+        <span id="nl" class="top right"></span>
+        <span id="nl" class="top left"></span>
+        <h2 id="close">&lt; / &gt;</h2>
+        <span id="nl" class="bottom right"></span>
+        <span id="nl" class="bottom left"></span>
+      </div>
+
+      <!--    LIST OF CONTRIBUTORS    -->
+      <h2 style="text-align:center"> List of Contributors </h2>
+      <hr />
+      <div class="wrapper container contribs">
+        <div class="row">
+
+          <!--    contributor    -->
+          <div class="col-md-2 d-flex align-items-stretch">
+            <div class="col-md-24 card">
+              <div class="container">
+                <h4><b>Dhruvit Jakasaniya</b></h4>
+                <p>IT</p>
+              </div>
+            </div>
+          </div>
+
+          <!--    contributor    -->
+          <div class="col-md-2 d-flex align-items-stretch">
+            <div class="col-md-24 card">
+              <div class="container">
+                <h4><b>Akshit Desai</b></h4>
+                <p>IT</p>
+              </div>
+            </div>
+          </div>
+
+          <!--    contributor    -->
+          <div class="col-md-2 d-flex align-items-stretch">
+            <div class="col-md-24 card">
+              <div class="container">
+                <h4><b>Zalak Delvadiya</b></h4>
+                <p>IT</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer">
+        <span id="foot">
+          Made &nbsp;with &nbsp;<i class="fa fa-heart pulse"></i> &nbsp;by &nbsp;<b>GCETians</b>
+        </span>
+      </div>
 </body>
 <script>
-var myUrl = 'https://clist.by/get/events/';
+  var myUrl = 'https://clist.by/get/events/';
 
-var proxy = 'https://cors-anywhere.herokuapp.com/';
+  var proxy = 'https://cors-anywhere.herokuapp.com/';
 
-var finalURL = proxy + myUrl;
-var upcomingContest = [];
-var ongoingContest = [];
-var today = new Date();
-var countdown_up = Number.MAX_SAFE_INTEGER;
-var countdown_on = Number.MAX_SAFE_INTEGER;
-var upcoming;
-var ongoing;
-$.getJSON(finalURL, function(data) {
-  for(var i = 0; i < data.length; i++) {
-    var obj = data[i];
-    var d = new Date(obj.start);
-    var d_end = new Date(obj.end);
-    if(obj.host=="codechef.com"){
-      if(obj.countdown < countdown_up && today.getTime() < d.getTime()){
-        upcomingContest.push(obj);
-        countdown_up = obj.countdown;
-      }
-      if(obj.countdown < countdown_on && today.getTime() > d.getTime() && today.getTime() < d_end.getTime()){
-        ongoingContest.push(obj);
-        countdown_on = obj.countdown;
+  var finalURL = proxy + myUrl;
+  var upcomingContest = [];
+  var ongoingContest = [];
+  var today = new Date();
+  var countdown_up = Number.MAX_SAFE_INTEGER;
+  var countdown_on = Number.MAX_SAFE_INTEGER;
+  var upcoming, ongoing, lastContest, lastUrl;
+  var events = ['Challenge', 'Cook-Off', 'Lunchtime'];
+  $.getJSON(finalURL, function(data) {
+    for (var i = 0; i < data.length; i++) {
+      var obj = data[i];
+      var d = new Date(obj.start);
+      var d_end = new Date(obj.end);
+      if (obj.host == "codechef.com") {
+        if (obj.countdown < countdown_up && today.getTime() < d.getTime()) {
+          upcomingContest.push(obj);
+          countdown_up = obj.countdown;
+        }
+        if (obj.countdown < countdown_on && today.getTime() > d.getTime() && today.getTime() < d_end.getTime()) {
+          ongoingContest.push(obj);
+          countdown_on = obj.countdown;
+        }
       }
     }
-}
-upcoming = upcomingContest.slice(-1)[0];
-ongoing = ongoingContest.slice(-1)[0];
-document.getElementById("upcomCont").href=upcoming.url;
-document.getElementById("upcomCont").innerHTML = upcoming.title;
-var deadline1 = new Date(Date.parse(new Date()) + (new Date(upcoming.start).getTime()-new Date().getTime()));
-initializeClock('clockdiv1', deadline1);
-document.getElementById("ongoCont").href=ongoing.url;
-document.getElementById("ongoCont").innerHTML = ongoing.title;
-var deadline2 = new Date(Date.parse(new Date()) + (new Date(ongoing.end).getTime()-new Date().getTime()));
-initializeClock('clockdiv2', deadline2);
-});
+    upcoming = upcomingContest.slice(-1)[0];
+    ongoing = ongoingContest.slice(-1)[0];
+    var s = new Date(ongoing.start);
+    var lastEvent = new Date(s.getFullYear(), s.getMonth() - 1);
+    var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+    var lastEventName;
+    for (i = 0; i < events.length; i++) {
+      if (ongoing.title.includes(events[i])) {
+        if (i == 0) {
+          lastEventName = events[2];
+        } else {
+          lastEventName = events[i--];
+        }
+        break;
+      }
+    }
+    var query = month[lastEvent.getMonth()].toLowerCase() + "-" + lastEventName.toLowerCase() + "-" + lastEvent.getFullYear();
+    lastUrl = "https://clist.by/standings/" + query + "/?division=div_1&detail=on&institution=G+H+Patel+College+of+Engineering+and+Technology&rating=";
+    var div2_url = "https://clist.by/standings/" + query + "/?division=div_2&detail=on&institution=G+H+Patel+College+of+Engineering+and+Technology&rating=";
+    document.getElementById("upcomCont").href = upcoming.url;
+    document.getElementById("upcomCont").innerHTML = upcoming.title;
+    var deadline1 = new Date(Date.parse(new Date()) + (new Date(upcoming.start).getTime() - new Date().getTime()));
+    initializeClock('clockdiv1', deadline1);
+    document.getElementById("ongoCont").href = ongoing.url;
+    document.getElementById("ongoCont").innerHTML = ongoing.title;
+    document.getElementById("lastCont").innerHTML = month[lastEvent.getMonth()] + " " + lastEventName + " " + lastEvent.getFullYear();
+    var deadline2 = new Date(Date.parse(new Date()) + (new Date(ongoing.end).getTime() - new Date().getTime()));
+    initializeClock('clockdiv2', deadline2);
 
-//var countDownDate = new Date("Oct 20, 2019 21:30:00").getTime();
-function getTimeRemaining(endtime) {
-  var t = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor((t / 1000) % 60);
-  var minutes = Math.floor((t / 1000 / 60) % 60);
-  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-  var days = Math.floor(t / (1000 * 60 * 60 * 24));
-  return {
-    'total': t,
-    'days': days,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
-}
+    var myUrl = lastUrl;
+    doCORSRequest({
+      method: 'get',
+      url: myUrl,
+    }, function printResult(result) {
+      parser = new DOMParser();
+      doc = parser.parseFromString(result, "text/html")
+      var collection = doc.getElementsByClassName("handle-div");
+      var board = document.getElementsByClassName("leaderboard_div1")[0];
+      for (let i = 0; i < collection.length; i++) {
+        var name = board.querySelector('.name'+String(i+1));
+        if(i==0){
+          name.innerHTML = "🥇 " + collection[i].childNodes[1].childNodes[1].title;
+        }
+        else if (i==1) {
+          name.innerHTML = "🥈 " + collection[i].childNodes[1].childNodes[1].title;
+        }
+        else {
+          name.innerHTML = "🥉 " + collection[i].childNodes[1].childNodes[1].title;
+        }
+        name.setAttribute('href', 'https://www.codechef.com/users/'+collection[i].childNodes[1].childNodes[1].innerHTML);
+      }
+    });
 
-function initializeClock(id, endtime) {
-  var clock = document.getElementById(id);
-  var daysSpan = clock.querySelector('.days');
-  var hoursSpan = clock.querySelector('.hours');
-  var minutesSpan = clock.querySelector('.minutes');
-  var secondsSpan = clock.querySelector('.seconds');
+    var myUrl = div2_url;
+    doCORSRequest({
+      method: 'get',
+      url: myUrl,
+    }, function printResult(result) {
+      parser = new DOMParser();
+      doc = parser.parseFromString(result, "text/html")
+      var collection = doc.getElementsByClassName("handle-div");
+      var board = document.getElementsByClassName("leaderboard_div2")[0];
+      for (let i = 0; i < collection.length; i++) {
+        var name = board.querySelector('.name'+String(i+4));
+        if(i==0){
+          name.innerHTML = "🥇 " + collection[i].childNodes[1].childNodes[1].title;
+        }
+        else if (i==1) {
+          name.innerHTML = "🥈 " + collection[i].childNodes[1].childNodes[1].title;
+        }
+        else {
+          name.innerHTML = "🥉 " + collection[i].childNodes[1].childNodes[1].title;
+        }
+      }
+    });
+  });
 
-  function updateClock() {
-    var t = getTimeRemaining(endtime);
+  function doCORSRequest(options, printResult) {
+    var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+    var x = new XMLHttpRequest();
+    x.open(options.method, cors_api_url + options.url);
+    x.onload = x.onerror = function() {
+      printResult(
+        options.method + ' ' + options.url + '\n' +
+        x.status + ' ' + x.statusText + '\n\n' +
+        (x.responseText || '')
+      );
+    };
+    if (/^POST/i.test(options.method)) {
+      x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    }
+    x.send(options.data);
+  }
 
-    daysSpan.innerHTML = t.days;
-    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+  //var countDownDate = new Date("Oct 20, 2019 21:30:00").getTime();
+  function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      'total': t,
+      'days': days,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
+  }
 
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
+  function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var daysSpan = clock.querySelector('.days');
+    var hoursSpan = clock.querySelector('.hours');
+    var minutesSpan = clock.querySelector('.minutes');
+    var secondsSpan = clock.querySelector('.seconds');
+
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+
+      daysSpan.innerHTML = t.days;
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+  }
+</script>
+
+<!--    script for navBar starts    -->
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
     }
   }
+</script>
+<!--    script for navBar ends   -->
 
-  updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
-}
-</script>
- <!--    script for navBar starts    -->
-  <script>
-function myFunction()
-{
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav")
-  {
-    x.className += " responsive";
-  }
-  else
-  {
-    x.className = "topnav";
-  }
-}
-</script>
-    <!--    script for navBar ends   -->
 </html>
