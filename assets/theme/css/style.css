@@ -583,9 +583,9 @@ nav .mbr-section-btn {
 .statistic-section {
      padding-top: 50px;
      padding-bottom: 50px;
-     background: #00c6ff;  /* fallback for old browsers */
-     background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
-     background: linear-gradient(to right, #0072ff, #00c6ff);
+     background: #995f46;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #995f46, #dba48c);
+     background: linear-gradient(to right, #995f46, #dba48c);
 }
 
 .count-title {
