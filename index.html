@@ -265,36 +265,37 @@
 
 </body>
 <script>
-  var myUrl = 'https://clist.by/get/events/';
+    var today = new Date();
+  var upcomingUrl = 'https://clist.by/api/v2/contest/?limit=100&event__iregex=Lunchtime%7CCook-Off%7CChallenge&order_by=start&host=codechef.com&start__gt=' + today.toISOString() + '&username=imdhruvit&api_key=40eceee00b594b87af0fe8da970b58894b9c5a30';
+  var ongoingUrl = 'https://clist.by/api/v2/contest/?limit=100&host=codechef.com&event__iregex=Lunchtime%7CCook-Off%7CChallenge&start__lt=' + today.toISOString() + '&end__gt=' + today.toISOString() + '&order_by=-start&username=imdhruvit&api_key=40eceee00b594b87af0fe8da970b58894b9c5a30';
 
   var proxy = 'https://cors-anywhere.herokuapp.com/';
 
-  var finalURL = proxy + myUrl;
+  var upcomingFinalURL = proxy + upcomingUrl;
+  var ongoingFinalURL = proxy + ongoingUrl;
   var upcomingContest = [];
   var ongoingContest = [];
-  var today = new Date();
-  var countdown_up = Number.MAX_SAFE_INTEGER;
-  var countdown_on = Number.MAX_SAFE_INTEGER;
   var upcoming, ongoing, lastContest, lastUrl;
-  var events = ['Challenge', 'Cook-Off', 'Lunchtime'];
-  $.getJSON(finalURL, function(data) {
-    for (var i = 0; i < data.length; i++) {
-      var obj = data[i];
-      var d = new Date(obj.start);
-      var d_end = new Date(obj.end);
-      if (obj.host == "codechef.com") {
-        if (obj.countdown < countdown_up && today.getTime() < d.getTime()) {
-          upcomingContest.push(obj);
-          countdown_up = obj.countdown;
-        }
-        if (obj.countdown < countdown_on && today.getTime() > d.getTime() && today.getTime() < d_end.getTime()) {
-          ongoingContest.push(obj);
-          countdown_on = obj.countdown;
-        }
+  console.log(today.toISOString());
+  $.getJSON(upcomingFinalURL, function(data) {
+      if(data.objects){
+        upcomingContest = data.objects[0];
       }
-    }
-    upcoming = upcomingContest.slice(-1)[0];
-    ongoing = ongoingContest.slice(-1)[0];
+      console.log(upcomingContest);
+      upcoming = upcomingContest;
+      document.getElementById("upcomCont").href = upcoming.href;
+    document.getElementById("upcomCont").innerHTML = upcoming.event;
+    var deadline1 = new Date(Date.parse(new Date()) + (new Date(upcoming.start).getTime() - new Date().getTime()));
+    initializeClock('clockdiv1', deadline1);
+  });
+    $.getJSON(ongoingFinalURL, function(data) {
+        if(data.objects){
+            ongoingContest = data.objects[0];
+      }
+    });
+    console.log(upcomingContest);
+    upcoming = upcomingContest;
+    ongoing = ongoingContest;
     var s = new Date(ongoing.start);
     var lastEvent = new Date(s.getFullYear(), s.getMonth() - 1);
     var month = new Array();
@@ -380,7 +381,6 @@
         }
       }
     });
-  });
 
   function doCORSRequest(options, printResult) {
     var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
