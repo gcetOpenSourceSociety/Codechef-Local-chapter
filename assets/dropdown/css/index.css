@@ -33,6 +33,9 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #eef7ed;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  border-bottom: 2px solid #574033;
  }
 
 .topnav .logo {
