@@ -11,7 +11,7 @@ body {
 .row {
   text-align: center;
 }
-}
+
 #uc1 {
   color: brown;
   text-align: center;
@@ -32,7 +32,10 @@ body {
 
 .topnav {
   overflow: hidden;
-  background-color: #eef7ed;
+  background-color: rgba(218,163,139,255);
+  padding-bottom: 2px;
+  padding-top: 2px;
+  border-bottom: 2px solid #574033;
  }
 
 .topnav .logo {
